@@ -18,7 +18,7 @@ sidebar:
   timezone: Europe/Rome # Enter your timezone, e.g., America/Havana, Africa/Casablanca, America/North_Dakota/Center
   citizenship: Italiana
   website: # Include the full website URL, including "http://" or "https://".
-  linkedin: francesco-mammana-350b474b
+  linkedin: &francesco-mammana-350b474b "francesco mammana"
   xing: 
   github: 
   telegram: # add your nickname without '@' sign
