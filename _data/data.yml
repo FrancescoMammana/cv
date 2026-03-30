@@ -1,103 +1,283 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
 sidebar:
-  position: right
-  about: True
-  education: True
+  position: right # position of the sidebar : left or right
+  about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+  education: True # set to False if you want education in main section instead of in sidebar
 
-### Profile information
-name: Francesco Mammana
-tagline: .NET Developer
-avatar: profile.png
-email: francesco.mammana@gmail.com
-phone: 345-9263477
-timezone: Europe/Rome
-citizenship: Italiana
-linkedin: francesco-mammana-350b474b
+  # Profile information
+  name: Francesco Mammana
+  tagline: .NET Developer
+  avatar: profile.png #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
-languages:
-  title: Languages
-  info:
+  # Sidebar links
+  email: francesco.mammana@gmail.com
+  phone: 345-9263477
+  timezone: Europe/Rome # Enter your timezone, e.g., America/Havana, Africa/Casablanca, America/North_Dakota/Center
+  citizenship: Italiana
+  website: # Include the full website URL, including "http://" or "https://".
+  linkedin: francesco-mammana-350b474b
+  xing: 
+  github: 
+  telegram: # add your nickname without '@' sign
+  gitlab:
+  bitbucket:
+  bluesky: '' # Specify your full Bluesky handle
+  twitter: ''
+  stack-overflow: # Number/Username, e.g. 123456/alandoe
+  codewars:
+  goodreads: # Number-Username, e.g. 123456-alandoe
+  mastodon: # Please include your full Mastodon link here.
+  hackerrank: # Please provide your HackerRank username.
+  leetcode: # Please provide your LeetCode username.
+  pdf: # Add a PDF link here if you want to include a PDF custom version in your resume.
+
+  languages:
+    title: Languages
+    info:
     - idiom: Italiano
-      level: Madrelingua
-    - idiom: Inglese
-      level: Buono (lettura/scrittura), Elementare (orale)
+      level: Native
+
+    - idiom: English
+      level: Professional
+      
+  interests:
+    title: 
+    info:
+    - item: 
+      link:
+
+
+    - item: 
+      link:
+
+
+    - item: 
+      link:
+
 
 career-profile:
   title: Career Profile
   summary: |
-    Sviluppatore .NET con una carriera decennale focalizzata sulla creazione di sistemi gestionali ed ERP complessi. 
-    Attualmente impegnato presso Datev Koinos Italia nello sviluppo di soluzioni cloud per la gestione immobiliare e fiscale, impiegando architetture ASP.NET, Wisej, Ninject e Dapper. 
-    Vanto una consolidata esperienza nel settore Retail (progetto WinStore per Euronics, Mediaworld, Expert e Trony) e nell'integrazione di sistemi aziendali (SAP MM) e hardware fiscale. 
-    Esperto sviluppatore con stack C#, SQL Server, ho lavorato con varie tecnologie in ambiente Microsoft:  WiseJ .NET, WPF, .NET MAUI, e in altri linguaggi collegati come VB .NET. 
-    Lavoro giornalmente usando programmazione asincrona, Dependency Injection e gestendo database relazionali.
-
+    Summarise your career here lorem ipsum dolor sit amet, consectetuer
+    adipiscing elit. You can [download this free resume/CV template here]().
+    Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque
+    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Donec quam felis, ultricies nec, pellentesque eu.
+    Second paragraph if required.
 education:
   title: Education
   info:
-    - degree: Laurea in Informatica
-      university: Università degli Studi di Milano
-      time: 2000 - 2006
-      details: |
-        Tesi in .NET (C#), Database Relazionali, Reti di Calcolatori, Algoritmi e Strutture Dati.
-    - degree: Ingegneria Elettronica (frequenza)
-      university: Università degli Studi di Messina
-      time: 1998 - 2000
-    - degree: Diploma Maturità Scientifica
-      university: Liceo Scientifico Archimede (Messina)
-      time: 1992 - 1997
+  - degree: MSc in Computer Science
+    university: University of London
+    time: 2011 - 2012
+    details: |
+      Describe your study here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      pretium quis, sem.
+        - Bullet point
+        - Bullet point
+  - degree: BSc in Applied Mathematics
+    university: Bristol University
+    time: 2007 - 2011
+    details: |
+      Describe your study here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      pretium quis, sem.
+        - Bullet point
+        - Bullet point
 
 experiences:
   title: Experiences
   info:
-    - role: C# .NET Developer
-      time: 02/2024 – Presente
-      company: Datev Koinos Italia, Milano
-      details: |
-        Sviluppo di moduli cloud per la gestione immobili, locazioni e fiscalità (IMU/dichiarazioni).
-        - Architettura ASP.NET con Wisej .NET, Ninject e Dapper.
-        - Gestione dati con SQL Server e caching tramite Redis.
-        - Sviluppo orientato agli eventi e programmazione asincrona.
-    - role: Developer .NET (C#, VB.NET)
-      time: 07/2022 – 02/2024
-      company: MTA Spa, Codogno
-      details: |
-        Sviluppo software interno per il settore automotive (Risorse umane, Qualità, Costi).
-        - Utilizzo di WPF e Code Trigger.
-        - Integrazione e comunicazione con SAP (modulo MM).
-        - Gestione database SQL Server.
-    - role: Developer .NET (C#)
-      time: 02/2006 – 07/2022
-      company: Wins SRL, Milano
-      details: |
-        Sviluppo ERP WinStore per il Retail (Euronics, Mediaworld, Trony).
-        - Gestione barriera cassa, hardware fiscale, magazzino e servizi REST/JSON.
-    - role: Sviluppatore .NET (C#)
-      time: 09/2005 - 02/2006
-      company: Università degli Studi di Milano - Alamobility
-      details: |
-        Tesi su gestione trasporti a chiamata e ottimizzazione flotte in real-time.
-    - role: Tecnico Software\Hardware
-      time: 2002 - 2003
-      company: Privati e Piccole Aziende
-      details: Assistenza Hardware e Software su Client Windows.
+  - role: Lead Developer
+    time: 2015 - Present
+    company: Startup Hubs, San Francisco
+    details: |
+      Describe your role here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+      Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+      pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+      enim. Donec pede justo. Sed ut perspiciatis unde omnis iste natus
+      error sit voluptatem accusantium doloremque laudantium, totam rem
+      aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+      architecto beatae vitae dicta sunt explicabo.
+        - Bullet point
+        - Bullet point
+  - role: Senior Software Engineer
+    time: 2014 - 2015
+    company: Google, London
+    details: |
+      Describe your role here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+      Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+      pellentesque eu, pretium quis, sem.
+        - Bullet point
+        - Bullet point
+  - role: UI Developer
+    time: 2012 - 2014
+    company: Amazon, London
+    details: |
+      Describe your role here lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+      Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus. Donec quam felis, ultricies nec,
+      pellentesque eu, pretium quis, sem.
+        - Bullet point
+        - Bullet point
 
 certifications:
   title: Certifications
   list:
-    - name: LE-1: Linux Essentials
-      start: 2020
-      organization: Linux Professional Institute (LPI)
+  - name: CV Builder
+    start: 2020
+    end: 2021
+    organization: Microsoft
+    credentialid: 111-222
+    credentialurl: www.google.com
+    credentialname: Google
+    details: |
+      Details about cert. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit.
+      Nullam eget orci purus. Nullam ultrices neque nibh.
+      Aenean fermentum, felis vulputate suscipit accumsan,
+      sem enim bibendum augue, sed convallis arcu lacus at dui.
+      Pellentesque et nibh suscipit, vestibulum turpis eu, semper tortor.
+      Praesent felis nibh, eleifend id eleifend id, dictum id enim.
+      Praesent venenatis erat non augue suscipit consectetur.
+
+      Second paragraph. Sed eleifend enim ante, vitae efficitur purus
+      fringilla vel. Ut euismod, sem sed vulputate venenatis,
+      justo diam viverra velit, sed rhoncus leo leo eu justo.
+      Suspendisse placerat risus ante, sed porta nisi blandit at.
+  - name: Git learning
+    start: 2019
+    end:
+    organization: Microsoft
+    credentialid: 111-222
+    credentialurl: www.github.com
+    credentialname: Github
+    details: |
+      Older certification. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit.
+      Nullam eget orci purus. Nullam ultrices neque nibh.
+      Aenean fermentum, felis vulputate suscipit accumsan,
+      sem enim bibendum augue, sed convallis arcu lacus at dui.
+      Pellentesque et nibh suscipit, vestibulum turpis eu, semper tortor.
+      Praesent felis nibh, eleifend id eleifend id, dictum id enim.
+      Praesent venenatis erat non augue suscipit consectetur.
+
+projects:
+  title: Projects
+  intro: >
+    You can list your side projects in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
+  assignments:
+  - title: Velocity
+    link: "#hook"
+    tagline: "A responsive website template designed to help startups promote, market and sell their products."
+
+  - title: DevStudio
+    link: "#"
+    tagline: "A responsive website template designed to help web developers/designers market their services."
+
+  - title: Tempo
+    link: "#"
+    tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
+
+  - title: Atom
+    link: "#"
+    tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
+
+  - title: Delta
+    link: "#"
+    tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
+
+oss:
+  title: OSS Contributions
+  intro: >
+    You can list your open source software contributions in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
+  contributions:
+  - title: Tempo
+    link: "#"
+    tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
+
+  - title: Atom
+    link: "#"
+    tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
+
+  - title: Delta
+    link: "#"
+    tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
+
+publications:
+  title: Publications
+  intro: |
+    You can list your publications in this section. Lorem ipsum dolor sit
+    amet, consectetur adipiscing elit. Vestibulum et ligula in nunc
+    bibendum fringilla a eu lectus.
+  papers:
+  - title: The Art of Computer Programming
+    link: "#"
+    authors: Donald E. Knuth
+    conference: Addison-Wesley, 1968
+
+  - title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
+    link: "#"
+    authors: Koza, J.R., Andre, D., Bennett, F.H., Keane, M.A.
+    conference: "Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edn. (1999)"
+
+  - title: A syntax directed compiler for Algol 60
+    link: "#"
+    authors: Edgar T. Irons
+    conference: "Comm. ACM 4 (1961), 51–55"
+
+recommendations:
+  title: Recommendations
+  list:
+  - person: Yareli Perez
+    email: perezyareli@example.com
+    phone: 012 345 6789
+    role: General Director at example.com
+    recommendation: |
+      Alan Doe is a super employee!
+  - person: Lara Henderson
+    email: larah@example.com
+    phone: 012 345 6789
+    role: General Director at example.com
+    recommendation: |
+      I would like to work with Alan Doe again!
+
+      He is a great employee!
 
 skills:
-  title: Skills & Proficiency
+  title: Skills &amp; Proficiency
+
   toolset:
-    - name: C# & .NET (Wisej .NET, WPF, WinForms, Maui)
-      level: 80%
-    - name: SQL Server, Dapper & Access layers di vario tipo
-      level: 95%
-    - name: SAP Integration (MM)
-      level: 60%
-    - name: Hardware Fiscale & Protocolli POS
-      level: 90%
+  - name: Python & Django
+    level: 98%
+
+  - name: Javascript & jQuery
+    level: 98%
+
+  - name: Angular
+    level: 98%
+
+  - name: HTML5 & CSS
+    level: 95%
+
+  - name: Ruby on Rails
+    level: 85%
+
+  - name: Sketch & Photoshop
+    level: 60%
 
 footer: >
-  Creato da Francesco Mammana - .NET Developer
+  Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
