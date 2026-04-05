@@ -30,14 +30,14 @@ function generatePDF() {
         filename: filename,
         image: { type: "jpeg", quality: 1 },
         html2canvas: {
-          scale: 1, // Adjust scale for better quality
+          scale: 2, // Adjust scale for better quality
           useCORS: true,
           letterRendering: true,
         },
         jsPDF: {
           unit: "mm",
           format: "a4",
-          orientation: "portrait",
+          orientation: "landscape",
         },
       };
 
