@@ -19,20 +19,20 @@ sidebar:
   citizenship: Italiana
   website: # Include the full website URL, including "http://" or "https://".
   linkedin: francesco-mammana-350b474b
-  xing: 
-  github: 
-  telegram: # add your nickname without '@' sign
-  gitlab:
-  bitbucket:
-  bluesky: '' # Specify your full Bluesky handle
-  twitter: ''
-  stack-overflow: # Number/Username, e.g. 123456/alandoe
-  codewars:
-  goodreads: # Number-Username, e.g. 123456-alandoe
-  mastodon: # Please include your full Mastodon link here.
-  hackerrank: # Please provide your HackerRank username.
-  leetcode: # Please provide your LeetCode username.
-  pdf: # Add a PDF link here if you want to include a PDF custom version in your resume.
+  # xing: 
+  # github: 
+  # telegram: # add your nickname without '@' sign
+  # gitlab:
+  # bitbucket:
+  # bluesky: '' # Specify your full Bluesky handle
+  # twitter: ''
+  # stack-overflow: # Number/Username, e.g. 123456/alandoe
+  # codewars:
+  # goodreads: # Number-Username, e.g. 123456-alandoe
+  # mastodon: # Please include your full Mastodon link here.
+  # hackerrank: # Please provide your HackerRank username.
+  # leetcode: # Please provide your LeetCode username.
+  # pdf: # Add a PDF link here if you want to include a PDF custom version in your resume.
 
   languages:
     title: Languages
@@ -43,16 +43,16 @@ sidebar:
     - idiom: English
       level: Professional
       
-  interests:
-    title: 
-    info:
-    - item: 
-      link:
+  # interests:
+  #   title: 
+  #   info:
+  #   - item: 
+  #     link:
 
 career-profile:
   title: Career Profile
   summary: |
-    Senior .NET Developer con oltre vent'anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati.
+    Senior .NET Developer con oltre vent'anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati. <br/>
     Attualmente in Datev Koinos Italia, sviluppo soluzioni Cloud per l'ambito fiscale e immobiliare basate su ASP.NET, Wisej, Ninject e Dapper, portando l'esperienza maturata sulle interfacce desktop verso architetture web evolute.
     Ho consolidato il mio background nel settore Retail lavorando per oltre 15 anni al progetto WinStore (Euronics, Mediaworld, Expert, Trony), 
     dove mi sono occupato dello sviluppo in Windows Forms, dell'integrazione di hardware fiscale e di servizi core. La mia esperienza include inoltre un biennio nel settore Automotive, focalizzato sulla creazione di software per uso interno integrati con l'ecosistema SAP.
@@ -156,19 +156,19 @@ skills:
 
   toolset:
   - name: SQL Server
-    level: 95%
+    level: 100%
   - name: C# 
-    level: 90%
+    level: 100%
   - name: WinForms & Wisej .NET (Desktop/Web UI)
-    level: 90%
+    level: 100%
   - name: Hardware Fiscale & Retail Integration
-    level: 85%
+    level: 80%
   - name: Dapper (Micro-ORM)
-    level: 85%
+    level: 80%
   - name: WPF (Windows Presentation Foundation)
-    level: 75%
+    level: 80%
   - name: VB.NET
-    level: 60%
+    level: 80%
 
 footer: >
   Creato da Francesco Mammana - .NET Developer

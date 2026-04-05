@@ -1,14 +1,14 @@
 #Update all the sections by editing the data.yml file inside _data folder.
 
 # Site Settings
-title: My Resume
-url: 'http://webjeda.com'
+title: Francesco Mammana - CV
+url: ''
 
 #change it according to your repository name
 # disabling since we are using a custom domain
 #baseurl: '/online-cv' 
 
-description: A beautiful Jekyll theme for creating resume
+description: Il mio curriculum vitae online, con un design moderno e professionale, creato con Jekyll e ispirato al template "Online CV" di HTML5 UP. Esplora la mia esperienza lavorativa, le competenze tecniche e i progetti realizzati in un formato chiaro e accattivante.
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
 theme_skin: blue # blue turquoise green berry orange ceramic teal oceanstale
 chrome_mobile_color: #use hex colors (ex:#1976d2) or leave empty if you don't want a color for chrome mobile searchbar
