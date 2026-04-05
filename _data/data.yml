@@ -10,7 +10,7 @@ sidebar:
   # Profile information
   name: Francesco Mammana
   tagline: .NET Developer
-  avatar: profile.png #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+  avatar: profilecv.png #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
   # Sidebar links
   email: francesco.mammana@gmail.com
