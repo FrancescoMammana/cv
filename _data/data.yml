@@ -115,41 +115,41 @@ certifications:
     credentialname: LPI Linux Essentials
     details: |
       Certificazione professionale che attesta la conoscenza fondamentale del sistema operativo Linux, della riga di comando (CLI) e dei principi dell'open source. Dimostra competenza nella gestione di ambienti server e nell'amministrazione di base del sistema.
-projects:
-  title: Projects
-  intro: >
+# projects:
+#   title: Projects
+#   intro: >
     
-  assignments:
+#   assignments:
 
-  - title: 
-    link: 
-    tagline: 
+#   - title: 
+#     link: 
+#     tagline: 
 
-oss:
-  title: 
-  intro: 
-  contributions:
-  - title: 
-    link: 
-    tagline: 
+# oss:
+#   title: 
+#   intro: 
+#   contributions:
+#   - title: 
+#     link: 
+#     tagline: 
 
-publications:
-  title: 
-  intro: |    
-  papers:
-  - title: 
-    link: 
-    authors: 
-    conference: 
+# publications:
+#   title: 
+#   intro: |    
+#   papers:
+#   - title: 
+#     link: 
+#     authors: 
+#     conference: 
 
-recommendations:
-  title: 
-  list:
-  - person: 
-    email: 
-    phone: 
-    role: 
-    recommendation: |
+# recommendations:
+#   title: 
+#   list:
+#   - person: 
+#     email: 
+#     phone: 
+#     role: 
+#     recommendation: |
 
 skills:
   title: Skills
