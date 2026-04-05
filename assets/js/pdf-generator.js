@@ -1,5 +1,6 @@
 function print() {
-  const printWindow = window.open("/print", "_blank");
+  const printURL = new URL("print", window.location.href).href;
+  const printWindow = window.open(printURL, "_blank");
   printWindow.onload = function () {
     printWindow.print();
     // Close the print window after a delay
