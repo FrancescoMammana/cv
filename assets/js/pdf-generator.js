@@ -22,7 +22,7 @@ function generatePDF() {
       // Get name from the DOM (as defined in data.yml)
       const name = document.querySelector(".name").textContent;
       // Format filename: replace spaces with underscores and append _resume.pdf
-      const filename = `${name.replace(/\s+/g, "_")}_Resume.pdf`;
+      const filename = `${name.replace(/\s+/g, "_")}_CV.pdf`;
 
       // Configure pdf options
       const opt = {
@@ -30,7 +30,7 @@ function generatePDF() {
         filename: filename,
         image: { type: "jpeg", quality: 1 },
         html2canvas: {
-          scale: 2, // Adjust scale for better quality
+          scale: 1, // Adjust scale for better quality
           useCORS: true,
           letterRendering: true,
         },
