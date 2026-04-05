@@ -49,15 +49,6 @@ sidebar:
     - item: 
       link:
 
-
-    - item: 
-      link:
-
-
-    - item: 
-      link:
-
-
 career-profile:
   title: Career Profile
   summary: |
@@ -87,7 +78,7 @@ experiences:
   info:
   - role: C# .NET Developer
     time: 02/2024 – Presente
-    company: Startup Hubs, San Francisco
+    company: Datev Koinos Italia, Milano
     details: |
       Sviluppo di moduli cloud per la gestione immobili, locazioni e fiscalità (IMU/dichiarazioni).
         - Architettura ASP.NET con Wisej .NET, Ninject e Dapper.
@@ -107,7 +98,7 @@ experiences:
     details: |
       Sviluppo ERP WinStore per il Retail (Euronics, Mediaworld, Trony).
         - Gestione barriera cassa, hardware fiscale, magazzino e servizi REST/JSON.
-- role: Developer .NET (C#)
+  - role: Developer .NET (C#)
     time: 09/2005 - 02/2006
     company: Università degli Studi di Milano - Alamobility
     details: |
@@ -161,7 +152,7 @@ recommendations:
     recommendation: |
 
 skills:
-  title: Skills &amp; Proficiency
+  title: Skills
 
   toolset:
   - name: SQL Server
