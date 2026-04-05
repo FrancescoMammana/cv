@@ -1,6 +1,5 @@
 function print() {
-  const printURL = new URL("print", window.location.href).href;
-  const printWindow = window.open(printURL, "_blank");
+  const printWindow = window.open("/print", "_blank");
   printWindow.onload = function () {
     printWindow.print();
     // Close the print window after a delay
@@ -27,11 +26,11 @@ function generatePDF() {
 
       // Configure pdf options
       const opt = {
-        margin: 10,
+        margin: 5,
         filename: filename,
-        image: { type: "jpeg", quality: 0.98 },
+        image: { type: "jpeg", quality: 1 },
         html2canvas: {
-          scale: 2,
+          scale: 2, // Adjust scale for better quality
           useCORS: true,
           letterRendering: true,
         },
