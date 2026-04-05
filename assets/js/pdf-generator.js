@@ -26,9 +26,9 @@ function generatePDF() {
 
       // Configure pdf options
       const opt = {
-        margin: 0,
+        // margin: 5,
         filename: filename,
-        image: { type: "jpeg", quality: 1 },
+        image: { type: "jpeg", quality: 0.80 },
         html2canvas: {
           scale: 2, // Adjust scale for better quality
           useCORS: true,
@@ -37,7 +37,7 @@ function generatePDF() {
         jsPDF: {
           unit: "mm",
           format: "a4",
-          orientation: "landscape",
+          orientation: "portrait",
         },
       };
 

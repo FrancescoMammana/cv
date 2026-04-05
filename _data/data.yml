@@ -111,7 +111,7 @@ certifications:
     end: 
     organization: Linux Professional Institute (LPI)
     credentialid: LPI000384939
-    credentialurl: https://cs.lpi.org/caf/Xamman/certification/verify/LPI000384939/udlfrut9qv
+    credentialurl: cs.lpi.org/caf/Xamman/certification/verify/LPI000384939/udlfrut9qv
     credentialname: LPI Linux Essentials
     details: |
       Certificazione professionale che attesta la conoscenza fondamentale del sistema operativo Linux, della riga di comando (CLI) e dei principi dell'open source. <br/> 
@@ -160,13 +160,13 @@ skills:
     level: 100%
   - name: C# 
     level: 100%
-  - name: WinForms & Wisej .NET (Desktop/Web UI)
+  - name: WinForms
     level: 100%
-  - name: Hardware Fiscale & Retail Integration
+  - name: Wisej .NET 
+    level: 100%
+  - name: Dapper
     level: 80%
-  - name: Dapper (Micro-ORM)
-    level: 80%
-  - name: WPF (Windows Presentation Foundation)
+  - name: WPF
     level: 80%
   - name: VB.NET
     level: 80%
