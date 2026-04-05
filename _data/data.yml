@@ -52,10 +52,10 @@ sidebar:
 career-profile:
   title: Career Profile
   summary: |
-    Senior .NET Developer con oltre vent’anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati.
-    Attualmente in Datev Koinos Italia, sviluppo soluzioni Cloud per l’ambito fiscale e immobiliare basate su ASP.NET, Wisej, Ninject e Dapper, portando l'esperienza maturata sulle interfacce desktop verso architetture web evolute.
+    Senior .NET Developer con oltre vent'anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati.
+    Attualmente in Datev Koinos Italia, sviluppo soluzioni Cloud per l'ambito fiscale e immobiliare basate su ASP.NET, Wisej, Ninject e Dapper, portando l'esperienza maturata sulle interfacce desktop verso architetture web evolute.
     Ho consolidato il mio background nel settore Retail lavorando per oltre 15 anni al progetto WinStore (Euronics, Mediaworld, Expert, Trony), 
-    dove mi sono occupato dello sviluppo in Windows Forms, dell’integrazione di hardware fiscale e di servizi core. La mia esperienza include inoltre un biennio nel settore Automotive, focalizzato sulla creazione di software per uso interno integrati con l'ecosistema SAP.
+    dove mi sono occupato dello sviluppo in Windows Forms, dell'integrazione di hardware fiscale e di servizi core. La mia esperienza include inoltre un biennio nel settore Automotive, focalizzato sulla creazione di software per uso interno integrati con l'ecosistema SAP.
     Esperto dello stack C# e SQL Server, ho una profonda padronanza delle tecnologie Microsoft, con un focus storico su Windows Forms, Wisej, WPF e VB.NET. 
     Gestisco quotidianamente lo sviluppo tramite programmazione asincrona e Dependency Injection, garantendo l'efficienza dei database relazionali e la manutenibilità di sistemi critici.
 education:
@@ -77,7 +77,7 @@ experiences:
   title: Experiences
   info:
   - role: C# .NET Developer
-    time: 02/2024 – Presente
+    time: 02/2024 - Presente
     company: Datev Koinos Italia, Milano
     details: |
       Sviluppo di moduli cloud per la gestione immobili, locazioni e fiscalità (IMU/dichiarazioni).
@@ -85,7 +85,7 @@ experiences:
         - Gestione dati con SQL Server e caching tramite Redis.
         - Sviluppo orientato agli eventi e programmazione asincrona.
   - role: Developer .NET (C#, VB.NET)
-    time: 07/2022 – 02/2024
+    time: 07/2022 - 02/2024
     company: MTA Spa, Codogno
     details: |
       Sviluppo software interno per il settore automotive (Risorse umane, Qualità, Costi).
@@ -93,7 +93,7 @@ experiences:
         - Integrazione e comunicazione con SAP (modulo MM).
         - Gestione database SQL Server.
   - role: Developer .NET (C#)
-    time: 02/2006 – 07/2022
+    time: 02/2006 - 07/2022
     company: Wins SRL, Milano
     details: |
       Sviluppo ERP WinStore per il Retail (Euronics, Mediaworld, Trony).
@@ -106,7 +106,7 @@ experiences:
 certifications:
   title: Certifications
   list:
-  - name: LE-1: Linux Essentials
+  - name: LE-1 - Linux Essentials
     start: 2020
     end: 
     organization: Linux Professional Institute (LPI)
