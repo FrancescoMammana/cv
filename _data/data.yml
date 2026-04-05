@@ -53,11 +53,11 @@ career-profile:
   title: Career Profile
   summary: |
     Senior .NET Developer con oltre vent'anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati. <br/>
-    Attualmente in Datev Koinos Italia, sviluppo soluzioni Cloud per l'ambito fiscale e immobiliare basate su ASP.NET, Wisej, Ninject e Dapper, portando l'esperienza maturata sulle interfacce desktop verso architetture web evolute.
+    Attualmente in Datev Koinos Italia, sviluppo soluzioni Cloud per l'ambito fiscale e immobiliare basate su ASP.NET, Wisej, Ninject e Dapper, portando l'esperienza maturata sulle interfacce desktop verso architetture web evolute. <br/>
     Ho consolidato il mio background nel settore Retail lavorando per oltre 15 anni al progetto WinStore (Euronics, Mediaworld, Expert, Trony), 
-    dove mi sono occupato dello sviluppo in Windows Forms, dell'integrazione di hardware fiscale e di servizi core. La mia esperienza include inoltre un biennio nel settore Automotive, focalizzato sulla creazione di software per uso interno integrati con l'ecosistema SAP.
-    Esperto dello stack C# e SQL Server, ho una profonda padronanza delle tecnologie Microsoft, con un focus storico su Windows Forms, Wisej, WPF e VB.NET. 
-    Gestisco quotidianamente lo sviluppo tramite programmazione asincrona e Dependency Injection, garantendo l'efficienza dei database relazionali e la manutenibilità di sistemi critici.
+    dove mi sono occupato dello sviluppo in Windows Forms, dell'integrazione di hardware fiscale e di servizi core. La mia esperienza include inoltre un biennio nel settore Automotive, focalizzato sulla creazione di software per uso interno integrati con l'ecosistema SAP. <br/>
+    Esperto dello stack C# e SQL Server, ho una profonda padronanza delle tecnologie Microsoft, con un focus storico su Windows Forms, Wisej, WPF e VB.NET. <br/>
+    Gestisco quotidianamente lo sviluppo tramite programmazione asincrona e Dependency Injection, garantendo l'efficienza dei database relazionali e la manutenibilità di sistemi critici. <br/>
 education:
   title: Education
   info:
@@ -114,7 +114,8 @@ certifications:
     credentialurl: https://cs.lpi.org/caf/Xamman/certification/verify/LPI000384939/udlfrut9qv
     credentialname: LPI Linux Essentials
     details: |
-      Certificazione professionale che attesta la conoscenza fondamentale del sistema operativo Linux, della riga di comando (CLI) e dei principi dell'open source. Dimostra competenza nella gestione di ambienti server e nell'amministrazione di base del sistema.
+      Certificazione professionale che attesta la conoscenza fondamentale del sistema operativo Linux, della riga di comando (CLI) e dei principi dell'open source. <br/> 
+      Dimostra competenza nella gestione di ambienti server e nell'amministrazione di base del sistema.
 # projects:
 #   title: Projects
 #   intro: >
