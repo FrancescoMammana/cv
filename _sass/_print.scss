@@ -1,6 +1,7 @@
 @media print {
   @page {
     size: A4;
+    padding-top: 4mm;
   }
   body {
     font-size: 9pt;
@@ -11,9 +12,9 @@
     max-width: 100%;
   }
 
-  .section-title {
-    padding-top: 4mm;
-  }
+  // .section-title {
+    
+  // }
 
   //   img.avatar {
   //     filter: grayscale(1);
