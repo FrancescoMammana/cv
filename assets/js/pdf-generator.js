@@ -26,7 +26,7 @@ function generatePDF() {
 
       // Configure pdf options
       const opt = {
-        // margin: 5,
+        margin: { top: 8, right: 0, bottom: 0, left: 0 },
         filename: filename,
         image: { type: "jpeg", quality: 0.80 },
         html2canvas: {
