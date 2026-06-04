@@ -80,35 +80,3 @@ Poi cliccare il bottone "PDF" e controllare che le esperienze non siano più tag
 | `assets/js/pdf-generator.js` | Aggiunto `pagebreak` alle opzioni html2pdf |
 | `_sass/_print.scss` | Aggiunto `break-inside: avoid` sugli `.item` |
 | `doc/plan.md` | Documento di pianificazione e report modifiche |
-
----
-
-# Fix v2: Icona sezione tagliata in alto da pagina 2+
-
-## Problema
-
-Con il fix precedente (`pagebreak` + `break-inside: avoid`), le esperienze non vengono più spezzate, ma le sezioni spinte a pagina 2+ partono esattamente dal bordo superiore della pagina PDF. L'icona della sezione (`.fa-stack` dentro `.section-title`) viene leggermente tagliata in alto perché html2pdf suddivide il canvas in fette A4 senza margini.
-
-## Causa
-
-In `assets/js/pdf-generator.js` l'opzione `margin` è commentata. html2pdf.js passa `margin` a jsPDF, che lo usa per posizionare il contenuto a una distanza dal bordo della pagina. Senza margine, dalla pagina 2 in poi il contenuto inizia a `y=0`.
-
-## Soluzione
-
-### Step 1 — Aggiungere `margin` in `assets/js/pdf-generator.js` ✅
-
-Modificare l'oggetto `opt`:
-
-```javascript
-margin: { top: 8, right: 0, bottom: 0, left: 0 },
-```
-
-- **`top: 8`**: 8mm di margine superiore su ogni pagina. A pagina 1 si somma al `padding: 60px` del `.main-wrapper` (impatto visivo minimo). Dalla pagina 2+ dà spazio sufficiente all'icona per non essere tagliata.
-- **`right/bottom/left: 0`**: nessun margine laterale o inferiore (il padding CSS interno al layout fornisce già lo spazio necessario).
-
-### File coinvolti
-
-| File | Modifica |
-|------|----------|
-| `assets/js/pdf-generator.js` | Aggiunto `margin` alle opzioni html2pdf |
-| `doc/plan.md` | Documento aggiornato |
