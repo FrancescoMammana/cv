@@ -11,6 +11,10 @@
     max-width: 100%;
   }
 
+  .section-title {
+    padding-top: 4mm;
+  }
+
   //   img.avatar {
   //     filter: grayscale(1);
   //     -webkit-filter: greyscale(1);
@@ -20,12 +24,14 @@
     //  float: right;
     //  color: black !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .sidebar-wrapper {
     position: static;
     //  float: right;
     //  width: 40%;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .remove-container.container-block {
@@ -50,6 +56,7 @@
   .skillset .level-bar-inner {
     background-color: $theme-color !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
    .fa-inverse,
