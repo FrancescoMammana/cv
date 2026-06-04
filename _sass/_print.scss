@@ -14,7 +14,12 @@
   // .section-title {
   //   padding-top: 4mm; 
   // }
-
+  .section {
+    padding-top: 5mm;
+  }
+  .section:first-of-type {
+    padding-top: 0;
+}
   //   img.avatar {
   //     filter: grayscale(1);
   //     -webkit-filter: greyscale(1);
