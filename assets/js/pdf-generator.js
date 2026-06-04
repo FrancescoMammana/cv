@@ -39,6 +39,10 @@ function generatePDF() {
           format: "a4",
           orientation: "portrait",
         },
+        pagebreak: {
+          mode: ["avoid-all", "css", "legacy"],
+          avoid: [".item"],
+        },
       };
 
       // Generate PDF

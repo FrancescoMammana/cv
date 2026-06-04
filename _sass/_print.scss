@@ -41,6 +41,12 @@
     break-inside: avoid;
   }
 
+  .experiences-section .item,
+  .projects-section .item,
+  .certifications-section .item {
+    break-inside: avoid;
+  }
+
   .skillset .level-bar-inner {
     background-color: $theme-color !important;
     -webkit-print-color-adjust: exact;
