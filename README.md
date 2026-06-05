@@ -1,90 +1,62 @@
-<a href="https://jekyll-themes.com">
-<img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+<div align="center">
+  <img src="https://img.shields.io/badge/Jekyll-CC0000?logo=jekyll&logoColor=white" alt="Jekyll"/>
+  <img src="https://img.shields.io/badge/GitHub%20Pages-222222?logo=githubpages&logoColor=white" alt="GitHub Pages"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white" alt="C#"/>
+  <img src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white" alt=".NET"/>
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white" alt="SQL Server"/>
+  <br/>
+  <a href="https://francescomammana.github.io/cv/">🌐 Visita il sito live</a>
+</div>
 
-# Orbit
-> This theme is designed by Xiaoying Riley at [3rd Wave Media](http://themes.3rdwavemedia.com/).
-> Visit [her website](http://themes.3rdwavemedia.com/) for more themes.
+# Francesco Mammana — CV Online
 
-I have made this into a Jekyll Theme. Checkout the live demo [here](https://online-cv.webjeda.com).
+Benvenuto nel repository del mio **curriculum vitae online**, un sito statico realizzato con [Jekyll](https://jekyllrb.com/) e ospitato su [GitHub Pages](https://pages.github.com/).
 
-<table>
-  <tr>
-    <th>Desktop</th>
-    <th>Mobile</th>
-  </tr>
-  <tr>
-    <td>
-        <img src="https://online-cv.webjeda.com/assets/images/desktop.png?raw=true" width="600"/>
-    </td>
-    <td>
-        <img src="https://online-cv.webjeda.com/assets/images/mobile.png?raw=true" width="250"/>
-    </td>
-  </tr>
-</table>
+## Chi sono
 
-## Installation
+Sono **Francesco Mammana**, un Senior .NET Developer con oltre vent'anni di esperienza nella progettazione di sistemi gestionali ed ERP per la gestione di grandi volumi di dati.
 
-* [Fork](https://github.com/sharu725/online-cv/fork) the repository;
-* Go to settings and set master branch as Github Pages source;
-* Your new site should be ready at `https://<username>.github.io/online-cv/`;
-* Printable version of the site can be found at `https://<username>.github.io/online-cv/print`. Use a third party link https://pdflayer.com/, https://www.web2pdfconvert.com/ etc to get the printable PDF.
+Attualmente lavoro presso **Datev Koinos Italia**, dove sviluppo soluzioni cloud per l'ambito fiscale e immobiliare.
 
-Change all the details from one place: `_data/data.yml`.
+### Competenze principali
 
-### To preview/edit locally with docker
+- **Linguaggi:** C#, VB.NET, SQL
+- **Framework:** .NET (WinForms, WPF, Wisej), ASP.NET
+- **Database:** SQL Server, Redis
+- **Pattern:** Dependency Injection, programmazione asincrona, Dapper
+- **Strumenti:** Docker, Git, Linux
 
-```sh
+## Tech stack del sito
+
+| Tecnologia | Ruolo |
+|---|---|
+| [Jekyll](https://jekyllrb.com/) | Static site generator (Ruby) |
+| [GitHub Pages](https://pages.github.com/) | Hosting |
+| [Sass / SCSS](https://sass-lang.com/) | Preprocessore CSS |
+| [Liquid](https://shopify.github.io/liquid/) | Template engine |
+| [Docker](https://www.docker.com/) | Ambiente di sviluppo locale |
+| Tema base | [Online CV](https://github.com/sharu725/online-cv) di Xiaoying Riley / sharu725 |
+
+## Sviluppo locale
+
+### Con Docker (consigliato)
+
+```bash
 docker-compose up
 ```
 
-*docker-compose.yml* file is used to create a container that is reachable under <http://localhost:4000>.
-Changes *_data/data.yml* will be visible after a while.
+Il sito sarà disponibile su [http://localhost:4000](http://localhost:4000).
 
-### Local machine
-
-* Get the repo into your machine 
-
-```bash
-git clone https://github.com/sharu725/online-cv.git
-```
-
-* Install required ruby gems
+### Con Ruby in locale
 
 ```bash
 bundle install
-```
-
-* Serve the site locally
-
-```bash
 bundle exec jekyll serve
 ```
 
-* Navigate to `http://localhost:4000`
+## Licenza
 
+Il template originale "Orbit" è stato realizzato da **Xiaoying Riley** ([3rd Wave Media](http://themes.3rdwavemedia.com/)) ed è distribuito sotto licenza Creative Commons Attribution 3.0.
 
-## Skins
-
-There are 6 color schemes available:
-
-| Blue | Turquoise | Green |
-|---------|---------|---------|
-| <img src="https://online-cv.webjeda.com/assets/images/blue.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/turquoise.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/green.jpg" width="300"/> |
-
-| Berry | Orange | Ceramic |
-|---------|---------|---------|
-| <img src="https://online-cv.webjeda.com/assets/images/berry.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/orange.jpg" width="300"/> | <img src="https://online-cv.webjeda.com/assets/images/ceramic.jpg" width="300"/> |
-
-## Credits
-
-Thanks to [Nelson Estevão](https://github.com/nelsonmestevao) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=nelsonmestevao).
-
-Thanks to [t-h-e(sfrost)](https://github.com/t-h-e) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=t-h-e).
-
-Check out for more themes: [**Jekyll Themes**](http://jekyll-themes.com).
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=sharu725/online-cv&type=Date)](https://star-history.com/#sharu725/online-cv&Date)
-
+Il repository è stato personalizzato e adattato da Francesco Mammana per uso personale.
