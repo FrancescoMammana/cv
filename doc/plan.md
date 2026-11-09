@@ -1,3 +1,5 @@
+> Documento storico: il generatore html2pdf descritto qui è stato sostituito dalla stampa nativa. Per il flusso attuale e le verifiche vedere [README](../README.md#stampa-e-pdf).
+
 # Piano di Sviluppo: Fix PDF — Esperienze tagliate a metà
 
 ## Problema

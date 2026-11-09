@@ -60,3 +60,22 @@ bundle exec jekyll serve
 Il template originale "Orbit" è stato realizzato da **Xiaoying Riley** ([3rd Wave Media](http://themes.3rdwavemedia.com/)) ed è distribuito sotto licenza Creative Commons Attribution 3.0.
 
 Il repository è stato personalizzato e adattato da Francesco Mammana per uso personale.
+
+## Stampa e PDF
+
+Il pulsante **PDF** apre un'anteprima nella stessa scheda. Da **Stampa / Salva PDF**
+si usa la finestra di stampa del dispositivo. Il documento è A4 fisso, con testo
+selezionabile; l'anteprima HTML si adatta anche allo schermo del telefono.
+Il nome proposto deriva dal titolo della pagina, mentre il salvataggio finale
+rimane gestito dal browser. Non sono necessari popup o conversioni in immagini.
+
+Dopo una build Jekyll, i test browser richiedono Node.js, Playwright, Chromium
+e gli strumenti Poppler (`pdfinfo` e `pdftotext`):
+
+```sh
+bundle exec jekyll build
+node --test _tests/print.browser.test.cjs
+```
+
+Per una build in un'altra cartella o con prefisso `/cv`, impostare rispettivamente
+`CV_SITE_DIR` e `CV_BASEURL`. `CHROMIUM_PATH` permette di scegliere l'eseguibile.

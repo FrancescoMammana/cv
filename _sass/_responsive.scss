@@ -1,5 +1,5 @@
 /* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   body {
     padding: 0;
   }
@@ -28,11 +28,11 @@
   }
 }
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .skillset .level-title {
     float: left;
     width: 30%;
@@ -56,9 +56,9 @@
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 }
 
 /* Ex-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1400px) {
+@media screen and (min-width: 1400px) {
 }
