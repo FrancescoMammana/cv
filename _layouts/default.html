@@ -2,20 +2,16 @@
 #Add "layout: compress" here to compress the html code
 ---
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="it" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="it" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en"> <!--<![endif]-->
+<html lang="it"> <!--<![endif]-->
 {% include head.html %}
 
 <body>
-  <!-- <button onclick="print()" class="print-button d-print-none">
-    <i class="fas fa-file-pdf"></i>Print
-  </button> -->
-
-  <button onclick="generatePDF()" class="pdf-button d-print-none" id="pdfButton">
-    <i class="fas fa-file-pdf"></i>PDF
-  </button>
+  <a href="{{ '/print' | relative_url }}" class="pdf-button d-print-none" id="pdfButton" title="Anteprima e stampa PDF">
+    <i class="fas fa-file-pdf" aria-hidden="true"></i>PDF
+  </a>
 
   <div class="wrapper">
     {% include sidebar.html %}
@@ -28,7 +24,6 @@
   {% include footer.html %}
 
   {% include scripts.html %}
-  <script src="{{ site.baseurl }}/assets/js/pdf-generator.js"></script>
 </body>
 
 </html>

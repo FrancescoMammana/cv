@@ -3,26 +3,24 @@
 ---
 
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="it" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="it" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="it">
   <!--<![endif]-->
   {% include head.html %}
-  <style>
-    body {
-      padding: 0 !important;
-    }
-    .wrapper {
-      max-width: unset !important;
-    }
-  </style>
-  <body>
+  <body class="print-preview">
+    <nav class="print-controls d-print-none" aria-label="Comandi di stampa">
+      <a href="{{ '/' | relative_url }}" class="btn btn-default">Torna al CV</a>
+      <button type="button" id="printButton" class="btn btn-primary" disabled>Stampa / Salva PDF</button>
+      <p id="printStatus" role="status">Preparazione della stampa…</p>
+    </nav>
     <div class="wrapper">
       {% include sidebar.html %}
 
       <div class="main-wrapper">{{ content }}</div>
     </div>
     {% include scripts.html %}
+    <script src="{{ '/assets/js/pdf-generator.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   </body>
 </html>
