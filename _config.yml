@@ -1,6 +1,7 @@
 #Update all the sections by editing the data.yml file inside _data folder.
 
 # Site Settings
+lang: it # it, en, or a language added to _data/ui.yml
 title: Francesco Mammana - CV
 url: 'https://francescomammana.github.io/cv/'
 
