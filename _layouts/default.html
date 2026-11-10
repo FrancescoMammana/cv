@@ -9,9 +9,10 @@
 {% include head.html %}
 
 <body>
-  <a href="{{ '/print' | relative_url }}" class="pdf-button d-print-none" id="pdfButton" title="Anteprima e stampa PDF">
+  <button type="button" class="pdf-button d-print-none" id="pdfButton" title="Stampa / Salva PDF" disabled>
     <i class="fas fa-file-pdf" aria-hidden="true"></i>PDF
-  </a>
+  </button>
+  <p id="printStatus" role="status" class="d-print-none" hidden></p>
 
   <div class="wrapper">
     {% include sidebar.html %}
@@ -24,6 +25,7 @@
   {% include footer.html %}
 
   {% include scripts.html %}
+  <script src="{{ '/assets/js/pdf-generator.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </body>
 
 </html>

@@ -62,9 +62,8 @@ afterEach(async function () {
   finally { if (page) await page.close(); }
 });
 
-async function openPreview() {
-  await page.click('#pdfButton');
-  await page.waitForSelector('#printButton:not([disabled])');
+async function waitForPrintReady() {
+  await page.waitForSelector('#pdfButton:not([disabled])');
 }
 
 async function pdfDetails(file) {
@@ -72,28 +71,40 @@ async function pdfDetails(file) {
   const { stdout: text } = await run('pdftotext', [file, '-']);
   const size = info.match(/Page size:\s+([\d.]+) x ([\d.]+)/);
   return { pages: Number(info.match(/Pages:\s+(\d+)/)[1]),
-    width: Number(size[1]), height: Number(size[2]), text: text.replace(/\s+/g, ' ').trim() };
+    width: Number(size[1]), height: Number(size[2]),
+    title: info.match(/^Title:\s+(.*)$/m)?.[1], text: text.replace(/\s+/g, ' ').trim() };
 }
 
-test('PDF opens a same-tab Italian preview and prints only on a user click', async function () {
+test('PDF directly prints without navigation or extra controls and restores the title', async function () {
+  await waitForPrintReady();
   assert.equal(await page.locator('script[src*="html2pdf"]').count(), 0);
   assert.equal(await page.getAttribute('html', 'lang'), 'it');
-  await openPreview();
-  assert.equal(new URL(page.url()).pathname, prefix + '/print');
-  assert.equal(page.context().pages().length, 1);
-  const name = await page.textContent('.name');
-  assert.equal(await page.title(), name.trim().replace(/ /g, '_') + '_CV');
+  const originalURL = page.url(), originalTitle = await page.title();
+  const name = (await page.textContent('.name')).trim();
   await page.evaluate(function () {
-    window.print = function () { window.printCalled = navigator.userActivation.isActive; };
+    window.printCalls = [];
+    window.print = function () {
+      window.dispatchEvent(new Event('beforeprint'));
+      window.printCalls.push({ active: navigator.userActivation.isActive, title: document.title });
+      window.dispatchEvent(new Event('afterprint'));
+    };
   });
-  assert.equal(await page.evaluate(function () { return window.printCalled; }), undefined);
-  await page.click('#printButton');
-  assert.equal(await page.evaluate(function () { return window.printCalled; }), true);
-  await page.getByRole('link', { name: 'Torna al CV' }).click();
-  assert.equal(new URL(page.url()).pathname, prefix + '/');
+  for (const width of [1200, 390]) {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.click('#pdfButton');
+    await page.click('#pdfButton');
+    assert.equal(page.url(), originalURL);
+    assert.equal(await page.title(), originalTitle);
+  }
+  const calls = await page.evaluate(function () { return window.printCalls; });
+  assert.equal(calls.length, 4);
+  for (const call of calls) assert.deepEqual(call, { active: true, title: name.replace(/\s+/g, '_') + '_CV' });
+  assert.equal(page.context().pages().length, 1);
+  assert.equal(await page.locator('#printButton, .print-controls').count(), 0);
+  assert.equal(await page.locator('#printStatus').isVisible(), false);
 });
 
-test('printing waits for the profile image', async function () {
+test('PDF waits for the profile image before enabling direct printing', async function () {
   let release;
   const gate = new Promise(function (resolve) { release = resolve; });
   await page.route('**/assets/images/profilecv.png', async function (route) {
@@ -101,62 +112,66 @@ test('printing waits for the profile image', async function () {
     await route.continue();
   });
   try {
-    await page.goto(baseURL + '/print', { waitUntil: 'domcontentloaded' });
-    assert.equal(await page.isDisabled('#printButton'), true);
+    await page.goto(baseURL + '/', { waitUntil: 'domcontentloaded' });
+    assert.equal(await page.isDisabled('#pdfButton'), true);
   } finally { release(); }
-  await page.waitForSelector('#printButton:not([disabled])');
+  await waitForPrintReady();
   assert.equal(await page.locator('.avatar').evaluate(function (image) { return image.naturalWidth > 0; }), true);
 });
 
-test('a missing image is reported without blocking printing forever', async function () {
+test('a missing image is reported on the CV without blocking printing forever', async function () {
   await page.route('**/assets/images/profilecv.png', async function (route) { await route.abort(); });
-  await openPreview();
+  await page.goto(baseURL + '/');
+  await waitForPrintReady();
+  assert.equal(await page.locator('#printStatus').isVisible(), true);
   assert.match(await page.textContent('#printStatus'), /immagini non sono state caricate/);
 });
 
-test('preview is responsive at phone widths and both controls stay accessible', async function () {
-  await openPreview();
+test('the CV remains responsive on phones with an accessible PDF button', async function () {
+  await waitForPrintReady();
   for (const width of [390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     const layout = await page.evaluate(function () {
-      return { columns: getComputedStyle(document.querySelector('.wrapper')).display,
-        overflow: document.documentElement.scrollWidth > innerWidth };
-    });
-    assert.equal(layout.columns, 'block');
-    assert.equal(layout.overflow, false);
-    const separated = await page.evaluate(function () {
       const organization = document.querySelector('.cert-org').getBoundingClientRect();
       const link = document.querySelector('.cert-url').getBoundingClientRect();
-      return link.top >= organization.bottom;
+      return { columns: getComputedStyle(document.querySelector('.wrapper')).display,
+        overflow: document.documentElement.scrollWidth > innerWidth,
+        separated: link.top >= organization.bottom };
     });
-    assert.equal(separated, true);
-    assert.equal(await page.getByRole('link', { name: 'Torna al CV' }).isVisible(), true);
-    assert.equal(await page.getByRole('button', { name: 'Stampa / Salva PDF' }).isVisible(), true);
+    assert.deepEqual(layout, { columns: 'block', overflow: false, separated: true });
+    assert.equal(await page.locator('#pdfButton').isVisible(), true);
   }
 });
 
-test('print keeps dates inside their rows, removes the shadow and hides controls', async function () {
-  await openPreview();
+test('the old print URL contains no intermediate buttons', async function () {
+  await page.goto(baseURL + '/print');
+  assert.equal(await page.locator('#printButton, .print-controls').count(), 0);
+  assert.equal(await page.getByRole('link', { name: 'Torna al CV' }).count(), 0);
+});
+
+test('print keeps dates inside their rows, removes the shadow and hides the PDF button', async function () {
+  await waitForPrintReady();
   const screenShadow = await page.locator('.wrapper').evaluate(function (element) { return getComputedStyle(element).boxShadow; });
   assert.notEqual(screenShadow, 'none');
   await page.setViewportSize({ width: 794, height: 1123 });
   await page.emulateMedia({ media: 'print' });
   const result = await page.evaluate(function () {
     return { shadow: getComputedStyle(document.querySelector('.wrapper')).boxShadow,
-      controls: getComputedStyle(document.querySelector('.print-controls')).display,
+      button: getComputedStyle(document.getElementById('pdfButton')).display,
+      status: getComputedStyle(document.getElementById('printStatus')).display,
       dates: [...document.querySelectorAll('.main-wrapper .time')].every(function (date) {
         const bounds = date.getBoundingClientRect(), row = date.parentElement.getBoundingClientRect();
         return bounds.top >= row.top && bounds.bottom <= row.bottom + 0.1;
       }) };
   });
-  assert.deepEqual(result, { shadow: 'none', controls: 'none', dates: true });
+  assert.deepEqual(result, { shadow: 'none', button: 'none', status: 'none', dates: true });
   await page.emulateMedia({ media: 'screen' });
   assert.equal(await page.locator('.wrapper').evaluate(function (element) { return getComputedStyle(element).boxShadow; }), screenShadow);
 });
 
-test('native PDF is A4 with identical selectable content on desktop and mobile', async function () {
-  await openPreview();
-  const name = (await page.textContent('.name')).trim();
+test('direct native print stays A4 with identical selectable content on desktop and mobile', async function () {
+  await waitForPrintReady();
+  const name = (await page.textContent('.name')).trim(), title = await page.title();
   const companies = await page.locator('.experiences-section .company').allTextContents();
   const documents = [];
   for (const width of [1200, 390]) {
@@ -167,6 +182,8 @@ test('native PDF is A4 with identical selectable content on desktop and mobile',
     assert.ok(Math.abs(document.width - 595.28) < 1);
     assert.ok(Math.abs(document.height - 841.89) < 1);
     assert.ok(document.text.includes(name));
+    assert.equal(document.title, name.replace(/\s+/g, '_') + '_CV');
+    assert.equal(await page.title(), title);
     for (const company of companies) assert.ok(document.text.includes(company.trim()));
     assert.ok(!document.text.includes('Torna al CV'));
     assert.ok(!document.text.includes('Stampa / Salva PDF'));

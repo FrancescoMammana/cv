@@ -10,17 +10,11 @@
   <!--<![endif]-->
   {% include head.html %}
   <body class="print-preview">
-    <nav class="print-controls d-print-none" aria-label="Comandi di stampa">
-      <a href="{{ '/' | relative_url }}" class="btn btn-default">Torna al CV</a>
-      <button type="button" id="printButton" class="btn btn-primary" disabled>Stampa / Salva PDF</button>
-      <p id="printStatus" role="status">Preparazione della stampa…</p>
-    </nav>
     <div class="wrapper">
       {% include sidebar.html %}
 
       <div class="main-wrapper">{{ content }}</div>
     </div>
     {% include scripts.html %}
-    <script src="{{ '/assets/js/pdf-generator.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   </body>
 </html>

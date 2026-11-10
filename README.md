@@ -63,11 +63,12 @@ Il repository è stato personalizzato e adattato da Francesco Mammana per uso pe
 
 ## Stampa e PDF
 
-Il pulsante **PDF** apre un'anteprima nella stessa scheda. Da **Stampa / Salva PDF**
-si usa la finestra di stampa del dispositivo. Il documento è A4 fisso, con testo
-selezionabile; l'anteprima HTML si adatta anche allo schermo del telefono.
-Il nome proposto deriva dal titolo della pagina, mentre il salvataggio finale
-rimane gestito dal browser. Non sono necessari popup o conversioni in immagini.
+Il pulsante **PDF** apre direttamente la stampa nativa del browser, senza cambiare
+pagina né mostrare comandi intermedi. Il documento è A4 fisso con testo
+selezionabile; il CV sul sito si adatta anche allo schermo del telefono.
+Il pulsante viene abilitato dopo il caricamento di immagini e font. Il browser
+gestisce il salvataggio finale; il titolo della pagina viene ripristinato quando
+si chiude o annulla la stampa. Non sono necessari popup o conversioni in immagini.
 
 Dopo una build Jekyll, i test browser richiedono Node.js, Playwright, Chromium
 e gli strumenti Poppler (`pdfinfo` e `pdftotext`):
