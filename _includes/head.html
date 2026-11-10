@@ -1,5 +1,7 @@
 <head>
-  <title>{% if page.layout == 'print' %}{{ site.data.data.sidebar.name | replace: ' ', '_' | append: '_CV' | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  {% assign cv_name = site.data.data.sidebar.name | default: '' | strip %}
+  {% assign cv_title = site.title | default: '' | strip | default: 'CV' %}
+  <title>{% if page.layout == 'print' and cv_name != '' %}{{ cv_name | split: ' ' | join: '_' | append: '_CV' | escape }}{% elsif page.layout == 'print' %}{{ cv_title | split: ' ' | join: '_' | escape }}{% else %}{{ cv_title | escape }}{% endif %}</title>
 
   <!-- Meta -->
   <meta charset="utf-8">

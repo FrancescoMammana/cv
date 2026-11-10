@@ -70,6 +70,16 @@ Il pulsante viene abilitato dopo il caricamento di immagini e font. Il browser
 gestisce il salvataggio finale; il titolo della pagina viene ripristinato quando
 si chiude o annulla la stampa. Non sono necessari popup o conversioni in immagini.
 
+La lingua dell'HTML e dei messaggi di stampa si sceglie con `lang` in
+`_config.yml`: `it` (predefinita) o `en`. Le varianti come `en-GB` riusano
+le traduzioni inglesi. Altre lingue si aggiungono in `_data/ui.yml`; una lingua
+non presente usa i messaggi italiani. Questa impostazione non traduce i testi
+personali del CV, che restano in `_data/data.yml`.
+
+Se `sidebar.name` manca o è vuoto, il nome proposto per il PDF usa il titolo
+del sito; se manca anche questo, usa `CV`. CSS, formato A4 e impaginazione
+non dipendono da queste impostazioni.
+
 Dopo una build Jekyll, i test browser richiedono Node.js, Playwright, Chromium
 e gli strumenti Poppler (`pdfinfo` e `pdftotext`):
 
@@ -80,3 +90,6 @@ node --test _tests/print.browser.test.cjs
 
 Per una build in un'altra cartella o con prefisso `/cv`, impostare rispettivamente
 `CV_SITE_DIR` e `CV_BASEURL`. `CHROMIUM_PATH` permette di scegliere l'eseguibile.
+
+Il test opzionale per un fork usa `CV_FORK_SITE_DIR`: una build di esempio con
+`lang: en-GB`, `title: Example CV` e senza `sidebar.name` nei dati del CV.

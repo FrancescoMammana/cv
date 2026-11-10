@@ -2,17 +2,19 @@
 #Add "layout: compress" here to compress the html code
 ---
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="it" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="it" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="{{ site.lang | default: 'it' | escape }}" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="{{ site.lang | default: 'it' | escape }}" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="it"> <!--<![endif]-->
+<html lang="{{ site.lang | default: 'it' | escape }}"> <!--<![endif]-->
 {% include head.html %}
 
 <body>
-  <button type="button" class="pdf-button d-print-none" id="pdfButton" title="Stampa / Salva PDF" disabled>
+  {% assign ui_language = site.lang | default: 'it' | downcase | split: '-' | first %}
+  {% assign ui = site.data.ui[ui_language] | default: site.data.ui.it %}
+  <button type="button" class="pdf-button d-print-none" id="pdfButton" title="{{ ui.print_title | default: site.data.ui.it.print_title | escape }}" disabled>
     <i class="fas fa-file-pdf" aria-hidden="true"></i>PDF
   </button>
-  <p id="printStatus" role="status" class="d-print-none" hidden></p>
+  <p id="printStatus" role="status" class="d-print-none" data-image-error="{{ ui.image_error | default: site.data.ui.it.image_error | escape }}" hidden></p>
 
   <div class="wrapper">
     {% include sidebar.html %}

@@ -1,0 +1,6 @@
+it:
+  print_title: Stampa / Salva PDF
+  image_error: "Alcune immagini non sono state caricate: controlla il CV prima di stampare."
+en:
+  print_title: Print / Save PDF
+  image_error: "Some images could not be loaded. Check your CV before printing."

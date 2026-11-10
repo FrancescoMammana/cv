@@ -6,11 +6,12 @@ async function preparePrint() {
   const results = await Promise.allSettled(resources);
   const failed = results.some(function (result) { return result.status === "rejected"; });
   status.hidden = !failed;
-  if (failed) status.textContent = "Alcune immagini non sono state caricate: controlla il CV prima di stampare.";
+  if (failed) status.textContent = status.dataset.imageError;
   const title = document.title;
-  const name = document.querySelector(".name").textContent.trim();
+  const name = document.querySelector(".name")?.textContent.trim();
+  const filename = (name ? name + "_CV" : title.trim() || "CV").replace(/\s+/g, "_");
   window.addEventListener("beforeprint", function () {
-    document.title = name.replace(/\s+/g, "_") + "_CV";
+    document.title = filename;
   });
   window.addEventListener("afterprint", function () { document.title = title; });
   button.addEventListener("click", function () { window.print(); });
