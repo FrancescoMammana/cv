@@ -4,19 +4,11 @@
     .wrapper { max-width: 210mm; }
     .contact-list a { overflow-wrap: anywhere; }
   }
-  .print-controls {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    max-width: 210mm;
-    margin: 0 auto 16px;
-    p { flex-basis: 100%; margin: 0; }
-  }
+
 }
 
 @media screen and (max-width: 767px) {
-  .print-preview {
+  .main-wrapper {
     .second-upper-row { display: block; }
     .cert-url { position: static; }
   }
