@@ -103,6 +103,24 @@ test('PDF directly prints without navigation or extra controls and restores the 
   assert.equal(await page.locator('#printStatus').isVisible(), false);
 });
 
+test('SEO metadata is complete and the print page avoids duplicate content', async function () {
+  await waitForPrintReady();
+  const canonical = await page.getAttribute('link[rel="canonical"]', 'href');
+  assert.ok(canonical && /^https?:\/\//.test(canonical));
+  assert.equal(await page.getAttribute('meta[property="og:url"]', 'content'), canonical);
+  assert.equal(await page.getAttribute('meta[property="og:type"]', 'content'), 'website');
+  assert.equal(await page.getAttribute('meta[property="og:title"]', 'content'), await page.title());
+  assert.match(await page.getAttribute('meta[property="og:image"]', 'content'), /\/assets\/images\/profilecv\.png$/);
+  assert.equal(await page.getAttribute('meta[name="twitter:card"]', 'content'), 'summary');
+  const data = JSON.parse(await page.textContent('script[type="application/ld+json"]'));
+  const name = (await page.locator('.name').allTextContents()).join('').trim();
+  assert.equal(data['@type'], 'Person');
+  assert.equal(data.name, name);
+  await page.goto(baseURL + '/print');
+  assert.equal(await page.locator('script[type="application/ld+json"]').count(), 0);
+  assert.equal(await page.getAttribute('link[rel="canonical"]', 'href'), canonical);
+});
+
 test('PDF waits for the profile image before enabling direct printing', async function () {
   let release;
   const gate = new Promise(function (resolve) { release = resolve; });

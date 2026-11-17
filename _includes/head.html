@@ -1,7 +1,22 @@
 <head>
-  {% assign cv_name = site.data.data.sidebar.name | default: '' | strip %}
+  {% assign sidebar = site.data.data.sidebar %}
+  {% assign skills = site.data.data.skills %}
+  {% assign cv_name = sidebar.name | default: '' | strip %}
   {% assign cv_title = site.title | default: '' | strip | default: 'CV' %}
-  <title>{% if page.layout == 'print' and cv_name != '' %}{{ cv_name | split: ' ' | join: '_' | append: '_CV' | escape }}{% elsif page.layout == 'print' %}{{ cv_title | split: ' ' | join: '_' | escape }}{% else %}{{ cv_title | escape }}{% endif %}</title>
+  {% if page.layout == 'print' and cv_name != '' %}
+    {% assign page_title = cv_name | split: ' ' | join: '_' | append: '_CV' %}
+  {% elsif page.layout == 'print' %}
+    {% assign page_title = cv_title | split: ' ' | join: '_' %}
+  {% else %}
+    {% assign page_title = cv_title %}
+  {% endif %}
+  {% assign canonical_path = page.url | remove_first: '/' %}
+  {% assign canonical_url = site.url | append: canonical_path %}
+  {% if page.layout == 'print' %}{% assign canonical_url = site.url %}{% endif %}
+  {% assign og_image = site.url | append: 'assets/images/profilecv.png' %}
+  {% assign lang = site.lang | default: 'it' | downcase %}
+  {% if lang contains 'en' %}{% assign og_locale = 'en_US' %}{% else %}{% assign og_locale = 'it_IT' %}{% endif %}
+  <title>{{ page_title | escape }}</title>
 
   <!-- Meta -->
   <meta charset="utf-8">
@@ -10,11 +25,50 @@
   {% endif%}
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description |default: "A beautiful
-  Jekyll theme for creating resume" }}">
+  <meta name="description" content="{{ site.description | default: cv_title | escape }}">
+  <meta name="author" content="{{ cv_name | default: cv_title | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ cv_title | escape }}">
+  <meta property="og:title" content="{{ cv_title | escape }}">
+  <meta property="og:description" content="{{ site.description | default: cv_title | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:locale" content="{{ og_locale }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="{{ cv_name | default: cv_title | escape }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ cv_title | escape }}">
+  <meta name="twitter:description" content="{{ site.description | default: cv_title | escape }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  <meta name="twitter:image:alt" content="{{ cv_name | default: cv_title | escape }}">
+
+  {% if page.layout != 'print' %}
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ cv_name | default: cv_title | jsonify }},
+    {% if sidebar.tagline %}"jobTitle": {{ sidebar.tagline | jsonify }},{% endif %}
+    {% if sidebar.email %}"email": {{ sidebar.email | jsonify }},{% endif %}
+    {% if sidebar.phone %}"telephone": {{ sidebar.phone | jsonify }},{% endif %}
+    "url": {{ site.url | jsonify }},
+    "sameAs": [{% if sidebar.linkedin %}{{ 'https://linkedin.com/in/' | append: sidebar.linkedin | jsonify }}{% endif %}],
+    {% if skills and skills.toolset %}"knowsAbout": [{% for skill in skills.toolset %}{{ skill.name | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],{% endif %}
+    "image": {{ og_image | jsonify }}
+  }
+  </script>
+  {% endif %}
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
 
   <!-- Global CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/plugins/bootstrap/css/bootstrap.css">
