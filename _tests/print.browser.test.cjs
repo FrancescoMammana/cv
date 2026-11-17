@@ -51,9 +51,6 @@ beforeEach(async function () {
   page = await browser.newPage({ viewport: { width: 1200, height: 1000 } });
   pageErrors = [];
   page.on('pageerror', function (error) { pageErrors.push(error.message); });
-  await page.route('https://www.googletagmanager.com/**', async function (route) {
-    await route.fulfill({ status: 204, body: '' });
-  });
   await page.goto(baseURL + '/');
 });
 
@@ -78,6 +75,7 @@ async function pdfDetails(file) {
 test('PDF directly prints without navigation or extra controls and restores the title', async function () {
   await waitForPrintReady();
   assert.equal(await page.locator('script[src*="html2pdf"]').count(), 0);
+  assert.equal(await page.locator('script[src*="googletagmanager"]').count(), 0);
   assert.match(await page.getAttribute('html', 'lang'), /^[a-zA-Z]+(?:-[a-zA-Z0-9]+)*$/);
   const originalURL = page.url(), originalTitle = await page.title();
   const name = (await page.locator('.name').allTextContents()).join('').trim();

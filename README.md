@@ -55,6 +55,10 @@ bundle install
 bundle exec jekyll serve
 ```
 
+## Privacy
+
+Il sito non utilizza strumenti di analytics né cookie di profilazione.
+
 ## Licenza
 
 Il template originale "Orbit" è stato realizzato da **Xiaoying Riley** ([3rd Wave Media](http://themes.3rdwavemedia.com/)) ed è distribuito sotto licenza Creative Commons Attribution 3.0.
